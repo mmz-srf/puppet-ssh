@@ -23,14 +23,14 @@ class ssh::server (
   }
 
   case $::osfamily {
-    RedHat  : {
+    "RedHat"  : {
       $supported = true
       $pkg_name = ['openssh-server']
       $svc_name = 'sshd'
       $config_file = '/etc/ssh/sshd_config'
 
     }
-    Debian  : {
+    "Debian"  : {
       $supported = true
       $pkg_name = ['openssh-server']
       $svc_name = 'ssh'
